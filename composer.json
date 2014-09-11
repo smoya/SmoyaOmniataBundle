@@ -1,0 +1,21 @@
+{
+    "name": "smoya/omniata-bundle",
+    "description": "Symfony2 Bundle to integrate the Omniata Component (smoya/omniata-component)",
+    "authors": [
+        {
+            "name": "Sergio Moya",
+            "email": "smoya89@gmail.com"
+        }
+    ],
+    "require": {
+        "smoya/omniata-component": "*"
+    },
+     "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smoya\\Bundle\\Omniata\\": "./"
+        }
+    }
+}

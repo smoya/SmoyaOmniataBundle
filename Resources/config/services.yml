@@ -1,0 +1,23 @@
+parameters:
+    smoya_omniata.client.class: "Smoya\Component\Omniata\Client"
+    smoya_omniata.tracker.class: "Smoya\Component\Omniata\Tracker"
+    smoya_omniata.deliverer.class: "Smoya\Component\Omniata\Deliverer"
+
+services:
+    smoya_omniata.client:
+        class: %smoya_omniata.client.class%
+        arguments: [%smoya_omniata.api_key%]
+
+    smoya_omniata.tracker:
+        class: %smoya_omniata.tracker.class%
+        arguments:
+            - @smoya_omniata.client
+            - %smoya_omniata.tracker.url%
+            - %smoya_omniata.tracker.timeout%
+
+    smoya_omniata.deliverer:
+        class: %smoya_omniata.deliverer.class%
+        arguments:
+            - @smoya_omniata.client
+            - %smoya_omniata.deliverer.url%
+            - %smoya_omniata.deliverer.timeout%
